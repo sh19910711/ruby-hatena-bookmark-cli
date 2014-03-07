@@ -1,8 +1,9 @@
 language: ruby
 rvm:
   - 2.1.0
-before_script:
+install:
   - bundle install
+  - bundle exec rake install
 script:
   - bundle exec rake spec
 gemfile:

@@ -1,0 +1,17 @@
+language: ruby
+rvm:
+  - 2.1.1
+  - 2.1.0
+before_script:
+  - bundle install
+script:
+  - bundle exec rake test
+gemfile:
+  - Gemfile
+deploy:
+  provider: rubygems
+  api_key:
+    secure: "d0r7NFWksgSLGtLVCVkMgXA1bJz3sf/1ZIHWEzaI/pI0adAgRfJGfuwC32bUIqhIvWu2PUKciIi98vOcaSGqhSCj9COgRT/ldhICO/v0JXNk3k2pMwVdU7y9PllHwRcPSLGYFMsU/5WCHB+DCdMtVQqJY0AlMItSkhOWQluYQUs="
+  gem:
+    master:
+      secure: "qwC315ppgWGsaJ/WrAoebyn+UHAFT+4bJxJAmXuDZFB2OxhS2tidNdOjPeofZRlylHi8eWfbYNYH2Eh4ofEaCAraOjohv3YG3NaXpJ/di1RyAd8+Q+ZjO2cyH/Z8SGJWnJfIZkU4osEYc1EfwO3KI0BRqmpDqES+vpYhIeG/PrM="

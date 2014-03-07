@@ -1,0 +1,38 @@
+
+%div.container
+  %h2 コマンド
+  %table.table
+    %thead
+      %tr
+        %th.col-xs-2 操作
+        %th.col-xs-10 説明
+    %tbody
+      %tr
+        %td
+          %form{"method" => "post", "action" => "/login"}
+            = csrf_tag
+            %input.btn.btn-primary{"type" => "submit", "value" => "ログイン"}
+        %td
+          %p はてなアカウントでログインする
+      %tr
+        %td
+          %form{"method" => "post", "action" => "/update"}
+            = csrf_tag
+            %input.btn.btn-primary{"type" => "submit", "value" => "更新"}
+        %td
+          %p タグ一覧を更新する（要ログイン）
+
+%div.container
+  %h2 使い方
+
+  %h3 設定方法
+
+  %ol
+    %li <a href="http://www.hatena.ne.jp/oauth/develop">OAuth 開発者向け設定ページ</a>からConsumer KeyとConsumer Secretを取得
+    %li ~/.hatena-bookmark/config.ymlにConsumer KeyとConsumer Secretを設定
+    %li ログイン
+    %li タグの補完機能を利用する場合はタグ一覧を更新
+
+  %h3 w3mの設定
+  %ol
+    %li keymapを設定

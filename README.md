@@ -1,24 +1,39 @@
-# Hatena::Bookmark::Cli
+# hatena-bookmark-cli
 
-TODO: Write a gem description
+はてなブックマークをコマンドライン（w3mなど）から利用するためのツールです。
 
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'hatena-bookmark-cli'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+## インストール方法
 
     $ gem install hatena-bookmark-cli
 
-## Usage
+## 使い方
 
-TODO: Write usage instructions here
+### 基本設定
+
+* `hatena-bookmark-auth`を実行して、認証用サーバーを起動
+* `~/.hatena-bookmark/config.yml`にConsumer KeyとConsumer Secretを記述
+* ブラウザから `http://localhost:48080` にアクセス
+* [ログイン]ボタンを押す
+* 補完が必要な場合は「更新」ボタンを押す
+* `hatena-bookmark {url}`を実行するとブックマークのタグやコメントを設定するためのプロンプトが表示される
+
+#### config.yml
+
+```yaml
+:consumer_key:    Consumer Key
+:consumer_secret: Consumer Secret
+
+```
+
+### w3mから利用する場合
+
+#### ~/.w3m/keymap
+
+```
+keymap m EXTERN "hatena-bookmark '%s'"
+```
+
+`m`キーを押すと、表示しているページのURLをはてなブックマークに登録することができます。
 
 ## Contributing
 
@@ -27,3 +42,9 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+### リンク集
+
+* http://b.hatena.ne.jp/
+* http://mattn.kaoriya.net/software/w3m/20090801214718.htm
+
